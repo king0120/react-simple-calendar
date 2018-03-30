@@ -2,30 +2,17 @@ import React, { Component } from 'react'
 import addDays from 'date-fns/add_days'
 import subDays from 'date-fns/sub_days'
 import format from 'date-fns/format'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import Day from './Day'
 import MonthSelect from './MonthSelect'
 import CalendarViewButtons from './CalendarViewButtons'
+import MonthView from './views/month/MonthView'
 import { Container } from 'semantic-ui-react'
-
-const DayStyle = styled.div`
-  width: calc(80vw/7);
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.25rem;
-  padding: 10px;
-`
 
 const CalStyle = styled.div`
   width: 80vw;
   margin: 30px auto;
-`
-
-const CalFlex = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 80vw;
-  margin: 0 auto;
 `
 
 const HeadContainer = styled.div`
@@ -102,16 +89,12 @@ class Calendar extends Component {
             </div>
           </HeadContainer>
 
-          <CalFlex>
-            {this.state.dayOfWeek.map((day, i) => (
-              <DayStyle key={i}>
-                {day}
-              </DayStyle>
-            ))}
-            {this.state.month.map((day, i) => (
-              <Day day={day} key={i}/>
-            ))}
-          </CalFlex>
+          <Router>
+            <Switch>
+              <Route path="/" component={MonthView}/>
+            </Switch>
+          </Router>
+          
         </CalStyle>
       </Container>
     )
