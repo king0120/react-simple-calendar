@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import 'react-big-calendar/lib/css/react-big-calendar.css'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { injectGlobal } from 'styled-components'
 
 import Calendar from './components/Calendar'
@@ -17,9 +17,9 @@ injectGlobal`
 class App extends Component {
   render () {
     return (
-      <div className="App">
+      <Router>
         <Calendar />
-      </div>
+      </Router>
     )
   }
 }

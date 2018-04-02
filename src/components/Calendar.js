@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import addDays from 'date-fns/add_days'
 import subDays from 'date-fns/sub_days'
 import format from 'date-fns/format'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
-import Day from './Day'
 import MonthSelect from './MonthSelect'
 import CalendarViewButtons from './CalendarViewButtons'
 import MonthView from './views/month/MonthView'
@@ -71,6 +70,12 @@ class Calendar extends Component {
   }
 
   render () {
+
+    const DayViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
+    const WeekViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
+    const MonthViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
+    const YearViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
+
     return (
       <Container>
         <CalStyle>
@@ -89,12 +94,14 @@ class Calendar extends Component {
             </div>
           </HeadContainer>
 
-          <Router>
-            <Switch>
-              <Route path="/" component={MonthView}/>
-            </Switch>
-          </Router>
-          
+
+          <Switch>
+            <Route path="/" component={MonthViewWrapper}/>
+            <Route path="/day" component={DayViewWrapper}/>
+            <Route path="/week" component={WeekViewWrapper}/>
+            <Route path="/month" component={MonthViewWrapper}/>
+            <Route path="/year" component={YearViewWrapper}/>
+          </Switch>
         </CalStyle>
       </Container>
     )

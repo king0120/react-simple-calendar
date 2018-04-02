@@ -17,15 +17,15 @@ const DayStyle = styled.div`
   padding: 10px;
 `
 
-const MonthView = () => {
+const MonthView = ({dayOfWeek, month}) => {
   return (
     <CalFlex>
-      {this.state.dayOfWeek.map((day, i) => (
+      {dayOfWeek.map((day, i) => (
         <DayStyle key={i}>
           {day}
         </DayStyle>
       ))}
-      {this.state.month.map((day, i) => (
+      {month.map((day, i) => (
         <Day day={day} key={i}/>
       ))}
     </CalFlex>
