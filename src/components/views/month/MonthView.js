@@ -1,23 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Day from './Day'
+import { CalFlex, DayStyle } from '../../styled/calendar-styles'
 
-const CalFlex = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 80vw;
-  margin: 0 auto;
-`
-
-const DayStyle = styled.div`
-  width: calc(80vw/7);
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.25rem;
-  padding: 10px;
-`
-
-const MonthView = ({dayOfWeek, month}) => {
+const MonthView = ({ dayOfWeek, month }) => {
   return (
     <CalFlex>
       {dayOfWeek.map((day, i) => (
@@ -30,6 +16,6 @@ const MonthView = ({dayOfWeek, month}) => {
       ))}
     </CalFlex>
   )
-};
+}
 
 export default MonthView

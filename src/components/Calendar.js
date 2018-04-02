@@ -3,11 +3,15 @@ import addDays from 'date-fns/add_days'
 import subDays from 'date-fns/sub_days'
 import format from 'date-fns/format'
 import { Switch, Route } from 'react-router-dom'
+import { Container } from 'semantic-ui-react'
 import styled from 'styled-components'
 import MonthSelect from './MonthSelect'
 import CalendarViewButtons from './CalendarViewButtons'
+import DayView from './views/day/DayView'
+import WeekView from './views/week/WeekView'
 import MonthView from './views/month/MonthView'
-import { Container } from 'semantic-ui-react'
+import YearView from './views/year/YearView'
+
 
 const CalStyle = styled.div`
   width: 80vw;
@@ -71,10 +75,20 @@ class Calendar extends Component {
 
   render () {
 
-    const DayViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
-    const WeekViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
+    const DayViewWrapper = (props) => <DayView
+      month={this.state.month}
+      dayOfWeek={this.state.dayOfWeek}
+      today={this.state.today}
+      {...props}
+    />
+    const WeekViewWrapper = (props) => <WeekView
+      month={this.state.month}
+      dayOfWeek={this.state.dayOfWeek}
+      today={this.state.today}
+      {...props}
+    />
     const MonthViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
-    const YearViewWrapper = (props) => <MonthView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
+    const YearViewWrapper = (props) => <YearView month={this.state.month} dayOfWeek={this.state.dayOfWeek} {...props}/>
 
     return (
       <Container>
@@ -96,7 +110,7 @@ class Calendar extends Component {
 
 
           <Switch>
-            <Route path="/" component={MonthViewWrapper}/>
+            <Route exact path="/" component={MonthViewWrapper}/>
             <Route path="/day" component={DayViewWrapper}/>
             <Route path="/week" component={WeekViewWrapper}/>
             <Route path="/month" component={MonthViewWrapper}/>
