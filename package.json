@@ -5,7 +5,6 @@
   "private": true,
   "dependencies": {
     "date-fns": "^1.29.0",
-    "jest-cli": "^22.4.3",
     "moment": "^2.21.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.0",
@@ -20,8 +19,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+<<<<<<< HEAD
   },
   "devDependencies": {
     "babel-jest": "^22.4.3",
@@ -31,5 +31,7 @@
     "jest": "^22.4.3",
     "react-test-renderer": "^16.3.1",
     "sinon": "^4.5.0"
+=======
+>>>>>>> parent of 45f557e... ejectin
   }
 }
