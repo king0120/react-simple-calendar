@@ -31,22 +31,5 @@
     "jest": "^22.4.3",
     "react-test-renderer": "^16.3.1",
     "sinon": "^4.5.0"
-  },
-  "jest": {
-    "verbose": true,
-    "automock": false,
-    "testEnvironment": "jsdom",
-    "setupTestFrameworkScriptFile": "./setup_tests.js",
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "moduleFileExtensions": [
-      "js",
-      "jsx"
-    ],
-    "moduleDirectories": [
-      "node_modules",
-      "bower_components"
-    ]
   }
 }
