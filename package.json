@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "date-fns": "^1.29.0",
+    "jest-cli": "^22.4.3",
     "moment": "^2.21.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.0",
@@ -19,7 +20,33 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "jest": "^22.4.3",
+    "react-test-renderer": "^16.3.1",
+    "sinon": "^4.5.0"
+  },
+  "jest": {
+    "verbose": true,
+    "automock": false,
+    "testEnvironment": "jsdom",
+    "setupTestFrameworkScriptFile": "./setup_tests.js",
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components"
+    ]
   }
 }
