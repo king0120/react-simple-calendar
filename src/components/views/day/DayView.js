@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class DayView extends Component {
-  render() {
+  render () {
     return (
       <div>
         Day View
       </div>
-    );
+    )
   }
 }
 
-export default DayView;
+export default DayView

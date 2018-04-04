@@ -1,6 +1,7 @@
 {
-  "name": "calendar-app",
+  "name": "react-simple-calendar",
   "version": "0.1.0",
+  "description": "pre-alpha build of an easy plug-and-play React calendar component",
   "private": true,
   "dependencies": {
     "date-fns": "^1.29.0",
